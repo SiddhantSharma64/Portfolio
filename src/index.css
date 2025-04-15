@@ -1,0 +1,452 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom cursor */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' stroke='rgba(37, 99, 235, 0.5)' stroke-width='2' fill='rgba(37, 99, 235, 0.1)'/%3E%3Ccircle cx='12' cy='12' r='3' fill='rgba(37, 99, 235, 0.8)'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+/* Links, buttons, and interactive elements */
+a, button, input, select, textarea, [role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' stroke='rgba(37, 99, 235, 0.8)' stroke-width='2' fill='rgba(37, 99, 235, 0.15)'/%3E%3Ccircle cx='12' cy='12' r='4' fill='rgba(37, 99, 235, 1)'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-wide;
+  }
+
+  .tech-gradient {
+    @apply bg-gradient-to-r from-tech-blue to-tech-darkBlue text-white;
+  }
+
+  .neon-gradient {
+    @apply bg-gradient-to-r from-tech-blue to-tech-neonBlue text-white;
+  }
+
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+
+  .neural-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230070f3' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+}
+
+/* Neural Network Background Pattern */
+.neural-network-grid {
+  background-image: 
+    radial-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
+    radial-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px;
+  background-position: 0 0, 20px 20px;
+  animation: neural-pulse 10s infinite alternate-reverse;
+}
+
+/* Advanced Animations */
+@keyframes neural-pulse {
+  0% {
+    background-size: 40px 40px, 80px 80px;
+    opacity: 0.3;
+  }
+  50% {
+    background-size: 42px 42px, 84px 84px;
+    opacity: 0.5;
+  }
+  100% {
+    background-size: 40px 40px, 80px 80px;
+    opacity: 0.3;
+  }
+}
+
+@keyframes blob-animation {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob-animation 15s infinite alternate;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Radar Chart Animations */
+.radar-chart-container {
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.radar-dot-pulse {
+  animation: radar-dot-pulse 2s infinite alternate;
+}
+
+.active-radar-dot-pulse {
+  animation: active-radar-dot-pulse 1s infinite alternate;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* AI Badge */
+.ai-badge {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+}
+
+/* Keyframes for animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+@keyframes radar-dot-pulse {
+  0% { r: 3; opacity: 0.7; }
+  100% { r: 4; opacity: 0.9; }
+}
+
+@keyframes active-radar-dot-pulse {
+  0% { r: 5; opacity: 0.8; }
+  100% { r: 7; opacity: 1; }
+}
+
+/* Fade-in animations for page elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Float animations for hero profile */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-medium {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 7s ease-in-out infinite;
+}
+
+@layer components {
+  .skill-tag {
+    @apply px-3 py-1.5 bg-tech-lightGray dark:bg-tech-darkGray text-tech-darkBlue dark:text-white rounded-md m-1 inline-block transition-all hover:scale-110 hover:shadow-md hover:bg-tech-blue hover:text-white dark:hover:bg-tech-blue cursor-default;
+  }
+
+  .project-card {
+    @apply bg-white dark:bg-tech-darkGray shadow-md rounded-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg border border-transparent hover:border-tech-blue/20;
+  }
+  
+  .ai-section-title {
+    @apply relative inline-block text-3xl font-bold mb-10 text-tech-darkBlue dark:text-white;
+  }
+  
+  .ai-section-title::after {
+    content: '';
+    @apply absolute -bottom-3 left-0 w-16 h-1 bg-gradient-to-r from-tech-blue to-tech-neonBlue;
+    animation: pulseWidth 4s infinite alternate;
+  }
+  
+  .interactive-card {
+    @apply bg-white dark:bg-tech-darkGray rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-tech-blue/30 shadow-md hover:shadow-xl hover:shadow-tech-blue/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-tech-blue to-tech-neonBlue bg-clip-text text-transparent;
+  }
+  
+  @keyframes pulseWidth {
+    0% { width: 2rem; }
+    100% { width: 4rem; }
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-tech-darkBlue dark:text-white relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-3 left-0 w-20 h-1 bg-gradient-to-r from-tech-blue to-tech-neonBlue;
+  }
+
+  .button-primary {
+    @apply bg-tech-blue text-white px-6 py-2.5 rounded-md hover:bg-tech-darkBlue transition-all hover:shadow-[0_0_10px_rgba(0,112,243,0.5)] flex items-center justify-center gap-2;
+  }
+
+  .button-outline {
+    @apply border border-tech-blue text-tech-darkBlue dark:text-white px-6 py-2.5 rounded-md hover:bg-tech-blue/10 transition-all flex items-center justify-center gap-2;
+  }
+
+  .fancy-underline {
+    @apply relative;
+  }
+
+  .fancy-underline::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-tech-blue transition-all duration-300;
+  }
+
+  .fancy-underline:hover::after {
+    @apply w-full;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-tech-blue/20 hover:-translate-y-1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-tech-blue/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-tech-blue;
+}
+
+/* Custom cursor */
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230070f3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18.178 8.39l-5.284 3.071a1 1 0 0 0-.43.431l-3.07 5.284c-.42.724-1.097.722-1.506-.004L.797 3.281C.386 2.549.464 2.483 1.197 2.894L15.088 9.01c.731.407.733 1.084.007 1.503l-2.4 1.386'%3E%3C/path%3E%3C/svg%3E") 0 0, auto;
+}
+
+a, button, select, input[type='checkbox'], input[type='radio'], [role='button'] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230070f3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='8 3 12 7 16 3'%3E%3C/polyline%3E%3Cline x1='12' y1='7' x2='12' y2='21'%3E%3C/line%3E%3C/svg%3E") 0 0, pointer;
+}
+
+/* Section transitions */
+.section-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #0070f3, #00c6ff);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.section-transition.active {
+  opacity: 0.2;
+  pointer-events: auto;
+  animation: processingAnimation 1s ease-out forwards;
+}
+
+@keyframes processingAnimation {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+/* Neural network pattern animation for backgrounds */
+.neural-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(0, 112, 243, 0.15) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(0, 112, 243, 0.1) 2px, transparent 0);
+  background-size: 100px 100px;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.dark .neural-bg {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(0, 198, 255, 0.15) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(0, 198, 255, 0.1) 2px, transparent 0);
+}
+
+/* Enhanced styling for the RadarChart SVG Surface */
+.recharts-wrapper {
+  outline: none !important;
+  font-family: inherit;
+}
+
+.recharts-polar-grid-angle line,
+.recharts-polar-grid-concentric path {
+  transition: stroke 0.3s ease-in-out, stroke-opacity 0.3s ease-in-out;
+}
+
+.recharts-polar-angle-axis-tick text,
+.recharts-polar-radius-axis-tick text {
+  transition: fill 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+/* Enhance Radar styling */
+.recharts-radar-polygon {
+  transition: fill 0.3s ease-in-out, fill-opacity 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.dark .recharts-radar-polygon {
+  filter: drop-shadow(0 0 4px rgba(0, 112, 243, 0.3));
+}
+
+.recharts-radar:hover .recharts-radar-polygon {
+  fill-opacity: 0.6;
+}
+
+/* Ensure text is readable in both modes */
+.dark .recharts-text {
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.recharts-text {
+  fill: rgba(0, 0, 0, 0.85);
+}
+
+/* Make axis lines more visible in dark mode */
+.dark .recharts-polar-grid-angle line,
+.dark .recharts-polar-grid-concentric path {
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Enhance hover effects */
+.recharts-radar-curve:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(0, 112, 243, 0.5));
+}

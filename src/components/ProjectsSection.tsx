@@ -83,7 +83,7 @@ const ProjectsSection: React.FC = () => {
       description: "Developed an end-to-end MLOps pipeline with KNN, AWS, Docker, FastAPI APIs, and CI/CD automation.",
       technologies: ["KNN", "AWS", "Docker", "FastAPI", "Evidently AI", "MLOps"],
       link: "https://github.com/SiddhantSharma64/US_Visa_Approval-MLOPs.git",
-      image: "images.jpeg",
+      image: "/images.jpeg",
       details: "This project implements a complete MLOps pipeline for predicting US visa approvals. Using K-Nearest Neighbors algorithm for prediction, the system is deployed with AWS services for scalability and Docker for containerization. FastAPI provides the API layer for making predictions, while Evidently AI is used for model monitoring. The entire pipeline includes automated CI/CD processes for continuous integration and deployment of model updates.",
       category: "MLOps",
       size: "medium"
